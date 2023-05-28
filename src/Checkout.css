@@ -1,0 +1,30 @@
+.checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    border: 1px solid #343434aa;
+    border-radius: 20px;
+}
+
+.checkout h1 {
+    color: rgb(39, 196, 39);
+}
+
+.checkout a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background: #6ACCEB;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.checkout__container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

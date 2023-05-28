@@ -1,0 +1,118 @@
+
+@media screen {
+    @media (max-width:1025px) {
+      html {
+        font-size: 12px;
+      }
+    }
+  
+    @media (max-width:641px) {
+      .home__header {
+        flex-direction: column-reverse;
+      }
+      .home__header img {
+        width: 100%;
+      }
+      .home__header-text h1 {
+        text-align: center;
+        font-size: 2rem !important;
+      }
+    } 
+  }
+  
+  .home__header {
+    display: flex;
+    width: 100%;
+    background-color: #f0f0f5;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .home__header img {
+    width: 50%;
+  }
+  
+  .home__header-text {
+    line-height: 1.75rem;
+  }
+  
+  .home__header-text h1 {
+    font-size: 3rem;
+  }
+  
+  .home__header-text-1 {
+    color: #313238;
+  }
+  
+  .home__header-text-2 {
+    color: #4B4B4B;
+    margin-bottom: 5rem;
+  }
+  
+  .home__header-text-link {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 5.4rem;
+    background-color: #6acceb;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .home__products {
+    margin: 4rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .home__products img {
+    width: 20rem;
+    height: 15rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+  }
+  
+  .home__products-card {
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home__products-card a {
+    margin-bottom: 2rem;
+    color: white;
+    background-color: black;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  .home__products-card-text {
+    line-height: 1.5rem;
+    padding: 10px 20px;
+  }
+  
+  .home__products-card h1 {
+    color: #343434;
+    font-size: 1.5rem;
+  }
+  
+  .home__products-card-text-price-no-discount {
+    text-decoration: line-through;
+    font-size: 0.9rem;
+  }
+  
+  .home__products-card-text-price-discount {
+    color: red;
+  }

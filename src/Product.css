@@ -1,0 +1,127 @@
+@media screen {
+    @media (max-width:1025px) {
+      html {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width:641px) {
+        .product__card {
+            flex-direction: column;
+            margin: 0;
+        }
+    
+        .product__card img {
+            margin-right: 0 !important;
+            width: 80%;
+        }
+
+        .product__card__info {
+            width: 80% !important;
+        }
+
+        .product__card__info button {
+            width: 100% !important;
+        }
+    }
+
+}
+
+.product__card {
+    display: flex;
+    margin: 5 2rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #343434;
+}
+
+.product__card h1 {
+    font-size: 1.5rem;
+}
+
+.product__card h2 {
+    font-size: 1.2rem;
+}
+
+
+.product__card__info {
+    width: 30%;
+}
+
+.product__card img {
+    width: 30%;
+    margin-right: 2rem;
+    min-width: 200px;
+    height: 20rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product__card p {
+    color: #343434aa;
+}
+
+.product__card label {
+    margin-right: 10px;
+}
+
+.product__card input {
+    width: 50px;
+    text-align: center;
+}
+
+.product__card__info button {
+    display: block;
+    margin-top: 20px;
+    width: 50%;
+    background: #6ACCEB;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    min-width: 100px;
+}
+
+.product__card__info button:hover {
+    background: #6acdebcd;
+}
+
+.product__card__info-price-no-discount {
+    margin-right: 5px;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.product__card__info-price-discount {
+    color:red;
+}
+
+.product__reviews {
+    background-image: url("/public/Background.png");
+    background-color: #50566B;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.product__reviews__card {
+    background: white;
+    width: 20rem;
+    margin: 15px 20px;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.product__reviews__card span:nth-child(1) {
+    margin-right: 20px; 
+    font-weight: bold;
+}
+.product__reviews__card span:nth-child(2) {
+    color: #FFC123
+}
