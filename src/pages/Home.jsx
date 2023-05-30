@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import "../Home.css"
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 function Home() {
     const [products, setProducts] = useState([]);
     const [search, setSearch] = useState("");
-
+    const productRef = useRef(null);
 
 
     useEffect(() => {
@@ -24,7 +24,12 @@ function Home() {
                     <div className='home__header-text'>
                         <h1 className='home__header-text-1'>Shop Smart</h1>
                         <h1 className='home__header-text-2'>Shop Easy</h1>
-                        <a className='home__header-text-link' href='#products'>Explore Now</a>
+                        <a onClick={() => {
+                            window.scrollTo({
+                                top: productRef.current.offsetTop - 100,
+                                behavior: "smooth"
+                            })
+                        }} className='home__header-text-link' href='#products'>Explore Now</a>
                     </div>
                     <img className='home__header-image' src='/pexels-suzy-hazelwood-2536965 1.png' alt='Header' />
                 </div>
@@ -40,7 +45,7 @@ function Home() {
                         </ul>
                     </div>
                 </div>
-                <div className='home__products' id='#products'>
+                <div ref={productRef} className='home__products' id='#products'>
                     {
                         products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).map(product => (
                             <div key={product.id} className='home__products-card'>
