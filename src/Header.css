@@ -6,15 +6,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px 5px;
+    z-index: 100;
 }
 
 .header__logo {
     text-decoration: none;
     font-weight: bold;
     color: white;
+    font-size: 1.1rem;
+    margin: 0 1rem;
 }
 
-.header__nav a {
-    margin-right: 5px;
+.header__cart a {
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.header__cart a span:nth-child(1) {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
 }

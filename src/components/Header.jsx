@@ -1,20 +1,27 @@
 import { Link } from "react-router-dom"
 import { ReactComponent as Cart } from "../Cart.svg"
-import { ReactComponent as Contact } from "../Contact.svg"
 import "../Header.css"
+import { useContext } from "react"
+import { CartContext } from "../CartProvider"
 
 export default function Header() {
+    const { items } = useContext(CartContext);
     return (
         <header className="header">
-            <Link to="/" className="header__logo">Home</Link>
-            <nav className="header__nav">
+            <div>
+                <Link to="/" className="header__logo">Home</Link>
+                <Link to="/contacts" className="header__logo">Contact Us</Link>
+            </div>
+            <div className="header__cart">
                 <Link to="/carts">
-                    <Cart />
+                    <span>
+                        {items.length}
+                    </span>
+                    <span>
+                        <Cart />
+                    </span>
                 </Link>
-                <Link to="/contacts">
-                    <Contact />
-                </Link>
-            </nav>
+            </div>
         </header>
     )
 }

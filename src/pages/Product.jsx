@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 export default function Product() {
     const { id } = useParams()
     const [product, setProduct] = useState(null);
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const { items, setItems } = useContext(CartContext);
     const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ export default function Product() {
                         }</h2>
                         <p>{product?.description}</p>
                         <label htmlFor="quantity">Quantity</label>
-                        <input type="number" id="quantity" onChange={(e) => setQuantity(e.target.value)} defaultValue={0} name="quantity" min="0" />
+                        <input type="number" id="quantity" onChange={(e) => setQuantity(e.target.value)} defaultValue={1} name="quantity" min="1" />
                         <button onClick={() => {
                             if (quantity <= 0) {
                                 return;

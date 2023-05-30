@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 function ItemRow({ idx, setTotal, item }) {
     const { setItems } = useContext(CartContext)
     const [quantity, setQuantity] = useState(item.quantity)
+
     return (<tr key={item.id}>
         <td className="cart__table-id">{idx + 1}</td>
         <td className="cart__table-item-name">
@@ -26,7 +27,7 @@ function ItemRow({ idx, setTotal, item }) {
                 setQuantity(e.target.value)
             }} />
         </td>
-        <td className="cart__table-item-total">${quantity * item.discountedPrice}</td>
+        <td className="cart__table-item-total">${Math.round(quantity * item.discountedPrice * 100) / 100}</td>
     </tr>)
 }
 
@@ -48,12 +49,12 @@ export default function Cart() {
                         </tr>
                     </thead>
                     <tbody>
-                        {items.map((item, idx) => <ItemRow idx={idx} setTotal={setTotal} item={item} />)}
+                        {items.map((item, idx) => <ItemRow key={idx} idx={idx} setTotal={setTotal} item={item} />)}
                     </tbody>
                 </table>
             </div>
             <div className="cart__total">
-                <h1>Total: ${total}</h1>
+                <h1>Total: ${Math.round(total * 100) / 100}</h1>
                 <Link to="/checkout" onClick={() => {
                     setItems([])
                 }}>Checkout</Link>

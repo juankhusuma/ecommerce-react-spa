@@ -76,7 +76,13 @@ table {
 
 .cart__total {
     text-align: center;
-    margin-bottom: 50px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    align-items: center;
 }
 
 .cart__total h1 {
@@ -85,10 +91,10 @@ table {
 
 .cart__total a {
     text-decoration: none;
-    padding: 0.75rem 3rem;
-    margin-top: 50px;
+    padding: 0.5rem 2rem;
     background-color: #6ACCEB;
     border-radius: 10px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: white;
 }
