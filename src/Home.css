@@ -149,6 +149,10 @@
     visibility: visible;
   }
 
+  .home__search-autocomplete:hover {
+    visibility: visible;
+  }
+
   .home__search-autocomplete {
     margin: 0;
     visibility: hidden;
