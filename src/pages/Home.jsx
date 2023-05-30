@@ -34,7 +34,7 @@ function Home() {
                         <ul className='home__search-autocomplete'>
                             {
                                 products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).slice(0, 5).map(product => (
-                                    <li key={product.id} className='home__search-autocomplete-item'>{product.title}</li>
+                                    <li key={product.id} onClick={() => setSearch(product.title)} className='home__search-autocomplete-item'>{product.title}</li>
                                 ))
                             }
                         </ul>
