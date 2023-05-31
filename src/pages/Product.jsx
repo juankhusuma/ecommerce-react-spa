@@ -35,19 +35,21 @@ export default function Product() {
                         <p>{product?.description}</p>
                         <label htmlFor="quantity">Quantity</label>
                         <input type="number" id="quantity" onChange={(e) => setQuantity(e.target.value)} defaultValue={1} name="quantity" min="1" />
-                        <button className={
-                            (items.find(item => item.id === product.id) ? "product__card-btn-inactive" : "product__card-btn-active")
-                        } onClick={() => {
-                            if (quantity <= 0) {
-                                return;
+                        <button
+                            className={
+                                (items.find(item => item.id === product?.id) ? "product__card-btn-inactive" : "product__card-btn-active")
                             }
-                            const id = product.id;
-                            items.find(item => item.id === id) ?
-                                setItems(items.map(item => item.id === id ? { ...item, quantity }
-                                    : item)) :
-                                setItems([...items, { ...product, quantity: quantity }])
-                        }
-                        }>Add to Cart</button>
+                            onClick={() => {
+                                if (quantity <= 0) {
+                                    return;
+                                }
+                                const id = product.id;
+                                items.find(item => item.id === id) ?
+                                    setItems(items.map(item => item.id === id ? { ...item, quantity }
+                                        : item)) :
+                                    setItems([...items, { ...product, quantity: quantity }])
+                            }
+                            }>Add to Cart</button>
                     </div>
                 </div>
 
