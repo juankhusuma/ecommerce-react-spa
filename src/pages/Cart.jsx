@@ -37,27 +37,29 @@ export default function Cart() {
 
     return (
         <Layout>
-            <div className="cart__table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {items.map((item, idx) => <ItemRow key={idx} idx={idx} setTotal={setTotal} item={item} />)}
-                    </tbody>
-                </table>
-            </div>
-            <div className="cart__total">
-                <h1>Total: ${Math.round(total * 100) / 100}</h1>
-                <Link to="/checkout" onClick={() => {
-                    setItems([])
-                }}>Checkout</Link>
+            <div className="cart">
+                <div className="cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {items.map((item, idx) => <ItemRow key={idx} idx={idx} setTotal={setTotal} item={item} />)}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="cart__total">
+                    <h1>Total: ${Math.round(total * 100) / 100}</h1>
+                    <Link to="/checkout" onClick={() => {
+                        setItems([])
+                    }}>Checkout</Link>
+                </div>
             </div>
         </Layout>
     )

@@ -33,40 +33,42 @@ function Home() {
                     </div>
                     <img className='home__header-image' src='/pexels-suzy-hazelwood-2536965 1.png' alt='Header' />
                 </div>
-                <div className='home__search' >
-                    <div>
-                        <input type='text' onChange={(e) => setSearch(e.target.value)} value={search} className='home__search' placeholder='Search...' />
-                        <ul className='home__search-autocomplete'>
-                            {
-                                products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).slice(0, 5).map(product => (
-                                    <li key={product.id} onClick={() => setSearch(product.title)} className='home__search-autocomplete-item'>{product.title}</li>
-                                ))
-                            }
-                        </ul>
+                <div className='home__body'>
+                    <div className='home__search' >
+                        <div>
+                            <input type='text' onChange={(e) => setSearch(e.target.value)} value={search} className='home__search' placeholder='Search...' />
+                            <ul className='home__search-autocomplete'>
+                                {
+                                    products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).slice(0, 5).map(product => (
+                                        <li key={product.id} onClick={() => setSearch(product.title)} className='home__search-autocomplete-item'>{product.title}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div ref={productRef} className='home__products' id='#products'>
-                    {
-                        products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).map(product => (
-                            <div key={product.id} className='home__products-card'>
-                                <img className='home__products-card-image' src={product.imageUrl} alt={product.title} />
-                                <div className='home__products-card-text'>
-                                    <Link to={`/product/${product.id}`}><h1>{product.title}</h1></Link>
-                                    <div>
-                                        {product.price === product.discountedPrice ?
-                                            <p className='home__products-card-text-price'>${product.price}</p>
-                                            :
-                                            <p>
-                                                <span className='home__products-card-text-price-no-discount'>${product.price} </span>
-                                                <span className='home__products-card-text-price-discount'>${product.discountedPrice}</span>
-                                            </p>
-                                        }
+                    <div ref={productRef} className='home__products' id='#products'>
+                        {
+                            products.filter(product => product.title.toLowerCase().includes(search.toLowerCase())).map(product => (
+                                <div key={product.id} className='home__products-card'>
+                                    <img className='home__products-card-image' src={product.imageUrl} alt={product.title} />
+                                    <div className='home__products-card-text'>
+                                        <Link to={`/product/${product.id}`}><h1>{product.title}</h1></Link>
+                                        <div>
+                                            {product.price === product.discountedPrice ?
+                                                <p className='home__products-card-text-price'>${product.price}</p>
+                                                :
+                                                <p>
+                                                    <span className='home__products-card-text-price-no-discount'>${product.price} </span>
+                                                    <span className='home__products-card-text-price-discount'>${product.discountedPrice}</span>
+                                                </p>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                        )
-                    }
+                            )
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </Layout>

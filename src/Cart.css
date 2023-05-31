@@ -27,6 +27,10 @@ tr::after {
     background: #34343455;
 }
 
+.cart {
+    margin: 10rem max(10%, 2rem);
+}
+
 .cart__table {
     display: flex;
     align-items: center;

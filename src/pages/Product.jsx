@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "../Product.css"
 import { CartContext } from "../CartProvider";
 import Layout from "../components/Layout";
@@ -9,7 +9,6 @@ export default function Product() {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const { items, setItems } = useContext(CartContext);
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`https://api.noroff.dev/api/v1/online-shop/${id}`)
@@ -36,7 +35,9 @@ export default function Product() {
                         <p>{product?.description}</p>
                         <label htmlFor="quantity">Quantity</label>
                         <input type="number" id="quantity" onChange={(e) => setQuantity(e.target.value)} defaultValue={1} name="quantity" min="1" />
-                        <button onClick={() => {
+                        <button className={
+                            (items.find(item => item.id === product.id) ? "product__card-btn-inactive" : "product__card-btn-active")
+                        } onClick={() => {
                             if (quantity <= 0) {
                                 return;
                             }
@@ -45,7 +46,6 @@ export default function Product() {
                                 setItems(items.map(item => item.id === id ? { ...item, quantity }
                                     : item)) :
                                 setItems([...items, { ...product, quantity: quantity }])
-                            navigate("/")
                         }
                         }>Add to Cart</button>
                     </div>
